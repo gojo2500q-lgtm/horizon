@@ -32,29 +32,11 @@ pub fn resident_bytes() -> Option<u64> {
     Some(pages * u64::try_from(page).ok()?)
 }
 
-/// The memory this process holds in RAM, in bytes.
-#[cfg(target_os = "macos")]
+/// Apple platforms do not expose the desktop process-memory probe consistently
+/// through libc (in particular, iOS has no `proc_pidinfo` binding).
+#[cfg(any(target_os = "macos", target_os = "ios"))]
 pub fn resident_bytes() -> Option<u64> {
-    let size = std::mem::size_of::<libc::proc_taskinfo>() as libc::c_int;
-    // SAFETY: all-zero is a valid value of this plain C struct, and the call writes at most `size`
-    // bytes into it.
-    unsafe {
-        let mut info: libc::proc_taskinfo = std::mem::zeroed();
-        let written = libc::proc_pidinfo(
-            libc::getpid(),
-            libc::PROC_PIDTASKINFO,
-            0,
-            (&raw mut info).cast(),
-            size,
-        );
-        (written == size).then_some(info.pti_resident_size)
-	}
-}
-
-/// iOS does not expose the desktop proc_pidinfo interface through libc.
-#[cfg(target_os = "ios")]
-pub fn resident_bytes() -> Option<u64> {
-	None
+    None
 }
 
 /// The memory this process holds in RAM, in bytes: not known on this system.
@@ -62,14 +44,13 @@ pub fn resident_bytes() -> Option<u64> {
 	windows,
 	target_os = "linux",
 	target_os = "android",
-	target_os = "macos",
-	target_os = "ios"
+    target_vendor = "apple"
 )))]
 pub fn resident_bytes() -> Option<u64> {
     None
 }
 
-#[cfg(all(test, any(windows, target_os = "linux", target_os = "macos")))]
+#[cfg(all(test, any(windows, target_os = "linux")))]
 mod tests {
     use super::*;
 
