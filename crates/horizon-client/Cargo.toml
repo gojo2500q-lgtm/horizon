@@ -10,6 +10,10 @@ autobins = false
 autoexamples = false
 autotests = false
 
+[lib]
+crate-type = ["rlib", "staticlib"]
+path = "src/lib.rs"
+
 [dependencies]
 horizon-cosmetics = { path = "../horizon-cosmetics" }
 horizon-client-lib = { path = "../horizon-client-lib", default-features = false }

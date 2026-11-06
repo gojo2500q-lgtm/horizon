@@ -1,0 +1,63 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* AppDelegate.swift */; };
+		A10000010000000000000002 /* HorizonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000002 /* HorizonViewController.swift */; };
+		A10000010000000000000003 /* libhorizon_client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000010000000000000005 /* libhorizon_client.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000010000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizonIOS/AppDelegate.swift; sourceTree = "<group>"; };
+		A20000010000000000000002 /* HorizonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizonIOS/HorizonViewController.swift; sourceTree = "<group>"; };
+		A20000010000000000000003 /* Horizon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizonIOS/Horizon-Bridging-Header.h; sourceTree = "<group>"; };
+		A20000010000000000000004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HorizonIOS/Info.plist; sourceTree = "<group>"; };
+		A20000010000000000000005 /* libhorizon_client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhorizon_client.a; path = build/libhorizon_client.a; sourceTree = "<group>"; };
+		A20000010000000000000006 /* HorizonIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorizonIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000010000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A10000010000000000000003 /* libhorizon_client.a in Frameworks */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000010000000000000001 = {isa = PBXGroup; children = (A40000010000000000000002 /* HorizonIOS */, A40000010000000000000003 /* Products */, A20000010000000000000005 /* libhorizon_client.a */,); sourceTree = "<group>"; };
+		A40000010000000000000002 /* HorizonIOS */ = {isa = PBXGroup; children = (A20000010000000000000001 /* AppDelegate.swift */, A20000010000000000000002 /* HorizonViewController.swift */, A20000010000000000000003 /* Horizon-Bridging-Header.h */, A20000010000000000000004 /* Info.plist */,); path = HorizonIOS; sourceTree = "<group>"; };
+		A40000010000000000000003 /* Products */ = {isa = PBXGroup; children = (A20000010000000000000006 /* HorizonIOS.app */,); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000010000000000000001 /* HorizonIOS */ = {isa = PBXNativeTarget; buildConfigurationList = A60000010000000000000002 /* Build configuration list for PBXNativeTarget "HorizonIOS" */; buildPhases = (A30000010000000000000001 /* Frameworks */, A30000010000000000000002 /* Sources */, A30000010000000000000003 /* Resources */); buildRules = (); dependencies = (); name = HorizonIOS; productName = HorizonIOS; productReference = A20000010000000000000006 /* HorizonIOS.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70000010000000000000001 /* Project object */ = {isa = PBXProject; attributes = {LastUpgradeCheck = 1600;}; buildConfigurationList = A60000010000000000000001 /* Build configuration list for PBXProject "HorizonIOS" */; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en,); mainGroup = A40000010000000000000001; productRefGroup = A40000010000000000000003 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (A50000010000000000000001 /* HorizonIOS */,); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A30000010000000000000003 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A30000010000000000000002 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000010000000000000001 /* AppDelegate.swift in Sources */, A10000010000000000000002 /* HorizonViewController.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A80000010000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Debug; };
+		A80000010000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Release; };
+		A80000010000000000000003 /* Debug target */ = {isa = XCBuildConfiguration; buildSettings = {ARCHS = arm64; CLANG_ENABLE_MODULES = YES; CODE_SIGNING_ALLOWED = NO; CODE_SIGNING_REQUIRED = NO; DEFINES_MODULE = YES; DEVELOPMENT_TEAM = ""; EMBEDDED_CONTENT_CONTAINS_SWIFT = YES; HEADER_SEARCH_PATHS = ("$(SRCROOT)/HorizonIOS",); INFOPLIST_FILE = HorizonIOS/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks"); LIBRARY_SEARCH_PATHS = ("$(SRCROOT)/build",); OTHER_LDFLAGS = ("-lHorizon-client", "-framework", Metal, "-framework", UIKit, "-framework", Foundation, "-framework", QuartzCore, "-framework", AudioToolbox, "-lc++"); PRODUCT_BUNDLE_IDENTIFIER = dev.playhorizon.ios; SWIFT_OBJC_BRIDGING_HEADER = HorizonIOS/Horizon-Bridging-Header.h; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A80000010000000000000004 /* Release target */ = {isa = XCBuildConfiguration; buildSettings = {ARCHS = arm64; CLANG_ENABLE_MODULES = YES; CODE_SIGNING_ALLOWED = NO; CODE_SIGNING_REQUIRED = NO; DEFINES_MODULE = YES; DEVELOPMENT_TEAM = ""; EMBEDDED_CONTENT_CONTAINS_SWIFT = YES; HEADER_SEARCH_PATHS = ("$(SRCROOT)/HorizonIOS",); INFOPLIST_FILE = HorizonIOS/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks"); LIBRARY_SEARCH_PATHS = ("$(SRCROOT)/build",); OTHER_LDFLAGS = ("-lHorizon-client", "-framework", Metal, "-framework", UIKit, "-framework", Foundation, "-framework", QuartzCore, "-framework", AudioToolbox, "-lc++"); PRODUCT_BUNDLE_IDENTIFIER = dev.playhorizon.ios; SWIFT_OBJC_BRIDGING_HEADER = HorizonIOS/Horizon-Bridging-Header.h; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A60000010000000000000001 /* Build configuration list for PBXProject "HorizonIOS" */ = {isa = XCConfigurationList; buildConfigurations = (A80000010000000000000001 /* Debug */, A80000010000000000000002 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A60000010000000000000002 /* Build configuration list for PBXNativeTarget "HorizonIOS" */ = {isa = XCConfigurationList; buildConfigurations = (A80000010000000000000003 /* Debug target */, A80000010000000000000004 /* Release target */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = A70000010000000000000001 /* Project object */;
+}
