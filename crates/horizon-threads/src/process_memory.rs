@@ -33,7 +33,7 @@ pub fn resident_bytes() -> Option<u64> {
 }
 
 /// The memory this process holds in RAM, in bytes.
-#[cfg(target_vendor = "apple")]
+#[cfg(target_os = "macos")]
 pub fn resident_bytes() -> Option<u64> {
     let size = std::mem::size_of::<libc::proc_taskinfo>() as libc::c_int;
     // SAFETY: all-zero is a valid value of this plain C struct, and the call writes at most `size`
@@ -48,21 +48,28 @@ pub fn resident_bytes() -> Option<u64> {
             size,
         );
         (written == size).then_some(info.pti_resident_size)
-    }
+	}
+}
+
+/// iOS does not expose the desktop proc_pidinfo interface through libc.
+#[cfg(target_os = "ios")]
+pub fn resident_bytes() -> Option<u64> {
+	None
 }
 
 /// The memory this process holds in RAM, in bytes: not known on this system.
 #[cfg(not(any(
-    windows,
-    target_os = "linux",
-    target_os = "android",
-    target_vendor = "apple"
+	windows,
+	target_os = "linux",
+	target_os = "android",
+	target_os = "macos",
+	target_os = "ios"
 )))]
 pub fn resident_bytes() -> Option<u64> {
     None
 }
 
-#[cfg(all(test, any(windows, target_os = "linux", target_vendor = "apple")))]
+#[cfg(all(test, any(windows, target_os = "linux", target_os = "macos")))]
 mod tests {
     use super::*;
 
